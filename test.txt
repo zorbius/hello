@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+int main(){
+	int nilai[] = {7,3,1,5,9,10,2,6,4,8};
+	int length = sizeof(nilai)/sizeof(*nilai);
+	int temp, cari;
+	for(int a = 1; a < length; a++){
+		for(int b = 0; b < length-a; b++){
+			if(nilai[b] < nilai[b+1]){
+				temp = nilai[b];
+				nilai[b] = nilai[b+1];
+				nilai[b+1] = temp;
+			}
+		}
+	}
+	cout << "Urutan data dari Besar ke Kecil : ";
+	for(int i = 0; i < length; i++){
+		cout << " " << nilai[i];
+	}
+	cout << "\n\nMasukkan Data array untuk mencari Index: ";
+	cin >> cari;
+	for(int j = 0; j < 10; j++){
+		if (cari == nilai[j]){
+			cout << "\nData dengan Nilai " << cari << " terdapat di Indeks ke-" << j << endl;
+		}
+	}
+	return 0;
+}
